@@ -1,35 +1,45 @@
+import './global.css'
+import { Header } from './components/Header'
+import { CreateTask } from './components/CreateTask'
+import styles from './App.module.css'
+import { TaskList } from './components/TaskList'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+interface TaskItem {
+    id: string, 
+    completed: boolean,
+    description: string
+}
+
+export function App() {
+  const [taskList, setNewTask] = useState<TaskItem[]>([]);
+  
+
+  function handleNewTask(task:TaskItem) {
+    console.log('task:', task)
+    setNewTask([...taskList, task]);
+  }
+
+  function deleteTask(id: string) {
+    const newTaskList = taskList.filter((task) => task.id !== id);
+    setNewTask(newTaskList);
+  }
+
+  function changeStatus(status: boolean, id: string) {
+    setNewTask(prev => prev.map((task) => task.id === id? {id: id, completed: !status, description: task.description} : task))
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={styles.wrapper}>
+      <Header/>
+      <div className={styles.createTaskApp}>
+        <CreateTask onTaskCreate={handleNewTask} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <div className={styles.taskList}>
+        
+        <TaskList tasks={taskList} taskCount={taskList.length} onDeleteTask={deleteTask} onChangeStatus={changeStatus}/>
+      </div>      
+    </div>
   )
 }
 
-export default App

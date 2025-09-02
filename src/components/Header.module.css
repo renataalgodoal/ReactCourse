@@ -1,0 +1,12 @@
+.header {
+    background-color: var(--gray-700);
+    height: 200px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rocket {
+   margin-right: 10px;
+}
