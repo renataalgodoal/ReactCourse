@@ -1,0 +1,23 @@
+.taskList {
+    width: 736px;
+}
+
+.headerTaskList {
+    height: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-400);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.toDoList {
+    color: var(--blue-light);
+    display: flex;
+}
+
+.doneList {
+    color: var(--purple-light);
+    display: flex;
+}

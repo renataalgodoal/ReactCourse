@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--gray-600);
+  position: relative;
+}
+
+.createTaskApp {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.taskList {
+  display: flex;
+  height: calc(100% - 200px);
+  justify-content: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,80 @@
+.taskItem {
+    background-color: var(--gray-500);
+    width: 736px;
+    min-height: 72px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+.item {
+    display: flex;
+}
+
+.check {
+    width: 25px;
+    flex-shrink: 0;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 15px;
+    padding: 0;
+    background-color: var(--purple-dark);
+    
+}
+
+.notChecked {
+    width: 25px;
+    flex-shrink: 0;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid var(--blue-light);
+    margin-right: 15px;
+    padding: 0;
+}
+
+.description {
+    color: var(--gray-100);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.completed {
+    color: var(--gray-100);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-decoration: line-through;
+}
+
+button {
+    display: flex;
+    background: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+
+button:focus {
+    outline: none;
+}
+
+img:hover {
+    color: var(--purple-dark);
+}
+
+.checkIcon {
+    width: 10px;
+    height: 10px;
+}
+
+.checkIconHide {
+    display: none;
+}

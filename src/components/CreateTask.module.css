@@ -1,0 +1,28 @@
+.form {
+    width: 736px;
+    height: 54px;
+    display: flex;
+}
+
+.textInput {
+    color: var(--gray-300);
+    background-color: var(--gray-500);
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 10px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.submitButton {
+    width: 90px;
+    background-color: var(--blue-dark);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
